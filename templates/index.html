@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SARIMA Forecast Dashboard</title>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+</head>
+<body>
+  <div class="container py-4">
+    <h1 class="mb-4">SARIMA Forecast Dashboard</h1>
+
+    <div class="row mb-3">
+      <div class="col-md-3">
+        <label for="variable" class="form-label">Variable</label>
+        <select id="variable" class="form-select"></select>
+      </div>
+      <div class="col-md-3">
+        <label for="steps" class="form-label">Forecast Steps</label>
+        <input type="number" id="steps" class="form-control" value="12" min="1">
+      </div>
+      <div class="col-md-3">
+        <label for="startDate" class="form-label">Start Date</label>
+        <input type="date" id="startDate" class="form-control">
+      </div>
+      <div class="col-md-3">
+        <label for="endDate" class="form-label">End Date</label>
+        <input type="date" id="endDate" class="form-control">
+      </div>
+    </div>
+
+    <button id="updateBtn" class="btn btn-primary mb-4">Update Chart</button>
+
+    <div id="alertContainer"></div> <!-- placeholder -->
+    
+    <canvas id="forecastChart" height="100"></canvas>
+  </div>
+
+  <!-- dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- Chart.js core + date-adapter -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+  <!-- your app logic -->
+  <script src="/static/app.js"></script>
+</body>
+</html>
